@@ -5,3 +5,16 @@ __pycache__/
 *.pyd
 *.pyw
 *.pyz
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+*.env.development
+*.zip
+*.tar
+*.whl
+*.egg
+*.egg-info
+*.dist-info
+*.dist-info
