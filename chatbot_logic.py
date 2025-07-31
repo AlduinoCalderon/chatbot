@@ -1,11 +1,15 @@
 from typing import List, Dict
 from utils import query_llm
-import re
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 
 class Memory:
     """Stores conversation history and user preferences"""
     def __init__(self):
-        # Store last 5 messages (increased from 3 for better context)
+        # Store last 6 messages (increased from 3 for better context)
         self.messages: List[Dict] = []
         # Store user preferences and facts
         self.user_preferences: Dict = {}
@@ -25,8 +29,8 @@ class Memory:
         self.messages.append(message_dict)
         
         # Keep only the last 5 messages for context
-        if len(self.messages) > 5:
-            self.messages = self.messages[-5:]
+        if len(self.messages) > 6:
+            self.messages = self.messages[-6:]
     
     def get_recent_messages(self) -> str:
         """
@@ -280,7 +284,7 @@ class AlduinoBot(Chatbot):
             prompt_parts.append(facts)
         
         prompt_parts.append(f"User says: {user_input}")
-        prompt_parts.append("Respond with creativity, innovation, and artistic flair!")
+        prompt_parts.append("Respond with creativity, innovation, poetry, and artistic flair!")
         
         return "\n".join(prompt_parts)
     
@@ -321,7 +325,7 @@ def main():
         bot = FriendlyBot("Joy")
     elif choice == "2":
         subject = input("What subject should I teach? ")
-        bot = TeacherBot("Prof. Smith", subject)
+        bot = TeacherBot("Prof. Alduino", subject)
     elif choice == "3":
         bot = AlduinoBot("Alduino")
     else:
