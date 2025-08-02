@@ -142,12 +142,12 @@ class Chatbot:
         
         if cmd == "/help":
             return """Special Commands:
-/help - Show this help message
-/remember [fact] - Remember something about the user
-/preference [key] [value] - Store a user preference
-/facts - Show remembered facts
-/preferences - Show user preferences
-/personality - Show current personality type"""
+                    /help - Show this help message
+                    /remember [fact] - Remember something about the user
+                    /preference [key] [value] - Store a user preference
+                    /facts - Show remembered facts
+                    /preferences - Show user preferences
+                    /personality - Show current personality type"""
         
         elif cmd == "/remember" and args:
             self.memory.add_fact(args)
