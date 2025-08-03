@@ -18,3 +18,7 @@ __pycache__/
 *.egg-info
 *.dist-info
 *.dist-info
+*.pdf
+*.ipynb
+*.ipynb.lock
+*.ipynb_checkpoints
